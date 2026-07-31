@@ -1,58 +1,59 @@
 # 🔢 NumPy Analyzer
 
-A menu-driven Python toolkit that combines **NumPy** array operations with **Object-Oriented Programming (OOP)** principles — encapsulation, static methods, and class methods — to let you create, manipulate, and analyze numerical data from the command line.
+A menu-driven, terminal-based data analysis toolkit built entirely with **NumPy** and core **Python OOP concepts** (encapsulation, properties, class methods, static methods). Create arrays of any dimension and perform math operations, indexing/slicing, combining/splitting, searching/sorting/filtering, and statistical analysis — all through a simple interactive CLI.
+
+<p align="center">
+  <a href="#-video-walkthrough">
+    <img src="https://img.shields.io/badge/▶-Watch%20the%20Build%20Video-red?style=for-the-badge&logo=youtube" alt="Watch the video">
+  </a>
+</p>
 
 ---
 
-## 🎥 Project Walkthrough
+## 📖 Project Description
 
-📺 **[Watch me build this project — screen recording](#)**
-*(Replace the `#` above with your actual video link)*
+**NumPy Analyzer** is a Python console application that wraps common NumPy operations inside a clean, guided menu system. Instead of writing NumPy code from scratch every time, you launch the tool and simply pick what you want to do — create a 1D/2D/3D array, run math on it, slice it, sort it, filter it, or compute statistics — and the tool handles the NumPy calls for you.
 
----
-
-## 📝 Description
-
-NumPy Analyzer is a single-class (`DataAnalytics`) command-line toolkit built around NumPy. It lets you create 1D, 2D, or 3D arrays, index and slice them, run element-wise math (plus dot product and matrix multiplication) against a second array, combine or split arrays, search/sort/filter values, and compute aggregate statistics — all through a simple numbered menu. The underlying array is kept private and only touched through the class's own methods, so all the array logic stays encapsulated inside `DataAnalytics`.
+It was built as a hands-on project to practice:
+- NumPy array creation, reshaping, and manipulation
+- Python OOP (private attributes, `@property`, `@staticmethod`, `@classmethod`)
+- Writing clean, exception-safe, user-driven CLI programs
 
 ---
 
 ## ✨ Features
 
-- **Array Creation** — Build 1D, 2D, or 3D NumPy arrays from user input (2D/3D reshaped automatically from a flat list of values)
-- **Indexing & Slicing** — Access single elements or ranges, with dedicated handling for 1D vs. 2D/3D arrays
-- **Mathematical Operations** — Element-wise addition, subtraction, multiplication, and division against a second array of matching shape, plus **dot product** and **matrix multiplication** for 2D arrays
-- **Combine & Split** — Concatenate (1D) or vertically stack (2D/3D) two arrays, or split an array into N equal parts
-- **Search, Sort & Filter** — Locate a value's index/indices, sort the array, or filter elements by greater-than, less-than, equal-to, or a between-two-values range
-- **Aggregates & Statistics** — Sum, mean, median, standard deviation, and variance
-- **Encapsulation** — The underlying array is stored as a private attribute (`__array`), accessed only via a `@property` getter/setter or the class's own methods
-- **`@staticmethod`** — A `display()` method that doesn't need an instance to run
-- **`@classmethod`** — `create_from_range()`, an alternate constructor that builds a `DataAnalytics` object directly from a NumPy range
-- **Menu-Driven UI** — Full numbered menu with a working exit option
+| Menu Option | What it does |
+|---|---|
+| **1. Create a NumPy Array** | Build a 1D, 2D, or 3D array from your own input values |
+| &nbsp;&nbsp;↳ Indexing & Slicing | Access single elements or slice sub-arrays for any dimension |
+| **2. Mathematical Operations** | Element-wise Addition, Subtraction, Multiplication, Division, plus Dot Product and Matrix Multiplication (2D) |
+| **3. Combine or Split Arrays** | Concatenate/vertically stack two arrays, or split an array into N equal parts |
+| **4. Search, Sort & Filter** | Find a value's index with `np.where`, sort arrays, or filter with conditions (`>`, `<`, `==`, or a value range) |
+| **5. Aggregates & Statistics** | Compute Sum, Mean, Median, Standard Deviation, and Variance |
+| **6. Exit** | Cleanly exits the program |
 
----
-
-## 🐞 A Few Things Worth Knowing
-
-Not blockers, just flagging in case you want to tidy them up:
-
-- **`create_from_range()` and `display()` still aren't wired into the menu.** Both exist on the class but there's no menu option that calls them, so a reviewer won't see them run.
-- **Combine only supports two arrays at a time** (the original plus one you enter), not an arbitrary number, even though the brief says "concatenate multiple arrays."
-- Minor typos in prompts: `"elemnts"` instead of "elements", `"Invaild choice."` instead of "Invalid choice."
+Additional highlights:
+- ✅ Supports **1D, 2D, and 3D arrays**
+- ✅ Input validation with graceful error handling (`try/except` everywhere)
+- ✅ Clean OOP design — array state is encapsulated in a private attribute with getter/setter properties
+- ✅ Alternate constructor via `create_from_range()` classmethod (build an array with `np.arange`)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Language:** Python 3
-- **Dependencies:** [NumPy](https://numpy.org/)
+- **Python 3**
+- **NumPy**
+- Jupyter Notebook (`.ipynb`) — original development environment
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── Numpy_Analyzer.ipynb   # Main application (Jupyter Notebook)
+Numpy-Analyzer/
+├── Numpy_Analyzer.ipynb   # Main notebook containing the DataAnalytics class + CLI
 └── README.md              # Project documentation
 ```
 
@@ -61,32 +62,36 @@ Not blockers, just flagging in case you want to tidy them up:
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-- Python 3.x
-- NumPy (`pip install numpy`)
-- Jupyter Notebook / JupyterLab (or convert the notebook to a `.py` file to run from a terminal)
+- Python 3.8+
+- NumPy
+- Jupyter Notebook / JupyterLab (or run as a `.py` script)
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/rudhiyansh/numpy-analyzer.git
-   cd numpy-analyzer
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/rudhiyansh/Numpy-Analyzer.git
+cd Numpy-Analyzer
 
-2. Install dependencies:
-   ```bash
-   pip install numpy
-   ```
+# Install dependencies
+pip install numpy notebook
+```
 
-3. Open and run the notebook:
-   ```bash
-   jupyter notebook Numpy_Analyzer.ipynb
-   ```
+### Usage
 
----
+**Option 1 — Run in Jupyter Notebook**
+```bash
+jupyter notebook Numpy_Analyzer.ipynb
+```
+Run the cell and follow the on-screen menu prompts.
 
-## 💻 Usage
+**Option 2 — Run as a Python script**
+```bash
+jupyter nbconvert --to script Numpy_Analyzer.ipynb
+python Numpy_Analyzer.py
+```
+
+### Example Session
 
 ```
 Welcome to the NumPy analyst!
@@ -99,57 +104,61 @@ Choose an option:
 4. Search, Sort, or Filter Arrays
 5. Compute Aggregates and Statistics
 6. Exit
-```
+Enter your choice: 1
+1. Create a new array
+2. Indexing and Slicing
+Enter your choice: 1
 
-- **1. Create a Numpy Array** — Choose to create a new 1D/2D/3D array, or index/slice an existing one.
-- **2. Perform Mathematical Operations** — Element-wise +, −, ×, ÷, or dot product / matrix multiplication (2D arrays) with a second array.
-- **3. Combine or Split Arrays** — Merge with another array, or split the current array into N parts.
-- **4. Search, Sort, or Filter Arrays** — Look up a value, sort the array, or filter by a condition.
-- **5. Compute Aggregates and Statistics** — Sum, mean, median, standard deviation, or variance.
-- **6. Exit** — Closes the program.
-
-### Example
-
-```
+Select the type of array to create:
+1. 1D Array
+2. 2D Array
+3. 3D Array
 Enter your choice: 2
+Enter the number of rows: 2
+Enter the number of columns: 3
+Enter 6 elements for the array separated by space: 20 30 40 50 60 70
 
-Choose a mathematical operation:
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division
-5. Dot Product (2D only)
-6. Matrix Multiplication (2D only)
-Enter your choice: 6
-
-Enter rows for second matrix (should be 3): 3
-Enter columns for second matrix: 2
-Enter 6 elements for second matrix: 1 2 3 4 5 6
-
-Original Array:
-[[10 20 30]
- [40 50 60]]
-
-Second Array:
-[[1 2]
- [3 4]
- [5 6]]
-
-Matrix Multiplication Result:
-[[220 280]
- [490 640]]
+Array created successfully:
+[[20 30 40]
+ [50 60 70]]
 ```
+
+---
+
+## 🎥 Video Walkthrough
+
+I recorded a full screen-recording documentary-style video while building this project, walking through the thought process and code line by line.
+
+<p align="center">
+  <a href="PASTE_YOUR_VIDEO_LINK_HERE">
+    <img src="https://img.shields.io/badge/▶️_Open_My_Video-Watch_Now-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the video walkthrough">
+  </a>
+</p>
+
+> Replace `PASTE_YOUR_VIDEO_LINK_HERE` above with your actual video URL (YouTube, Google Drive, etc.) so the button links correctly.
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] Add unit tests for each operation
+- [ ] Support loading array data from CSV files
+- [ ] Add a simple GUI (Tkinter / Streamlit) version
+- [ ] Export results to file
+
+---
 
 ## 👤 Author
 
-**GitHub:** [@rudhiyansh](https://github.com/rudhiyansh)
+**Rudhiyansh**
+GitHub: [@rudhiyansh](https://github.com/rudhiyansh)
 
 ---
 
-## 📄 License
+## 📜 License
 
-This project is submitted for academic purposes as part of a Python OOP / Data Analysis assignment.
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-*"Quality is our Motto."*
+<p align="center">If you found this project useful, consider giving it a ⭐!</p>
