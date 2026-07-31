@@ -1,97 +1,98 @@
-# 🔢 NumPy Analyzer
+# 🧮 NumPy Analyzer
 
-A menu-driven, terminal-based data analysis toolkit built entirely with **NumPy** and core **Python OOP concepts** (encapsulation, properties, class methods, static methods). Create arrays of any dimension and perform math operations, indexing/slicing, combining/splitting, searching/sorting/filtering, and statistical analysis — all through a simple interactive CLI.
-
-<p align="center">
-  <a href="#-video-walkthrough">
-    <img src="https://img.shields.io/badge/▶-Watch%20the%20Build%20Video-red?style=for-the-badge&logo=youtube" alt="Watch the video">
-  </a>
-</p>
-
----
+A menu-driven, command-line data analytics toolkit built entirely with **NumPy** and core **Python OOP concepts** (encapsulation, properties, static methods, and class methods). NumPy Analyzer lets you create, manipulate, and analyze 1D, 2D, and 3D arrays interactively — no need to write a single line of code to explore array operations.
 
 ## 📖 Project Description
 
-**NumPy Analyzer** is a Python console application that wraps common NumPy operations inside a clean, guided menu system. Instead of writing NumPy code from scratch every time, you launch the tool and simply pick what you want to do — create a 1D/2D/3D array, run math on it, slice it, sort it, filter it, or compute statistics — and the tool handles the NumPy calls for you.
+NumPy Analyzer is an educational, interactive Python application that wraps common NumPy operations behind a simple text menu. It was built to demonstrate practical use of:
 
-It was built as a hands-on project to practice:
-- NumPy array creation, reshaping, and manipulation
-- Python OOP (private attributes, `@property`, `@staticmethod`, `@classmethod`)
-- Writing clean, exception-safe, user-driven CLI programs
+- **Object-Oriented Programming** — a `DataAnalytics` class encapsulating array state with private attributes, `@property`/setter, `@staticmethod`, and `@classmethod`
+- **NumPy fundamentals** — array creation, reshaping, indexing, slicing, broadcasting, linear algebra, aggregation, and boolean filtering
 
----
+Whether you're learning NumPy, teaching it, or just need a quick tool to poke at arrays without firing up a full notebook, this project provides a guided, menu-based interface to do it all.
 
 ## ✨ Features
 
-| Menu Option | What it does |
-|---|---|
-| **1. Create a NumPy Array** | Build a 1D, 2D, or 3D array from your own input values |
-| &nbsp;&nbsp;↳ Indexing & Slicing | Access single elements or slice sub-arrays for any dimension |
-| **2. Mathematical Operations** | Element-wise Addition, Subtraction, Multiplication, Division, plus Dot Product and Matrix Multiplication (2D) |
-| **3. Combine or Split Arrays** | Concatenate/vertically stack two arrays, or split an array into N equal parts |
-| **4. Search, Sort & Filter** | Find a value's index with `np.where`, sort arrays, or filter with conditions (`>`, `<`, `==`, or a value range) |
-| **5. Aggregates & Statistics** | Compute Sum, Mean, Median, Standard Deviation, and Variance |
-| **6. Exit** | Cleanly exits the program |
+### 🧱 Array Creation
+- Create **1D, 2D, or 3D** NumPy arrays from custom user input
+- Alternate constructor to create arrays directly from a numeric range (`create_from_range`)
 
-Additional highlights:
-- ✅ Supports **1D, 2D, and 3D arrays**
-- ✅ Input validation with graceful error handling (`try/except` everywhere)
-- ✅ Clean OOP design — array state is encapsulated in a private attribute with getter/setter properties
-- ✅ Alternate constructor via `create_from_range()` classmethod (build an array with `np.arange`)
+### 🔍 Indexing & Slicing
+- Access individual elements by index (1D, 2D, 3D supported)
+- Slice arrays using flexible `start:end` range syntax
 
----
+### ➕ Mathematical Operations
+- Element-wise **addition, subtraction, multiplication, division**
+- **Dot product** (2D arrays)
+- **Matrix multiplication** with automatic shape validation
+
+### 🔗 Combine & Split
+- Concatenate 1D arrays or vertically stack 2D/3D arrays
+- Split an array into *n* equal parts
+
+### 🔎 Search, Sort & Filter
+- Search for a value and get its index/indices
+- Sort arrays (row-wise for multi-dimensional arrays)
+- Filter elements by:
+  - Greater than a value
+  - Less than a value
+  - Equal to a value
+  - Between two values
+
+### 📊 Aggregate & Statistical Analysis
+- Sum, Mean, Median
+- Standard Deviation
+- Variance
 
 ## 🛠️ Tech Stack
 
 - **Python 3**
 - **NumPy**
-- Jupyter Notebook (`.ipynb`) — original development environment
-
----
 
 ## 📂 Project Structure
 
 ```
-Numpy-Analyzer/
-├── Numpy_Analyzer.ipynb   # Main notebook containing the DataAnalytics class + CLI
+Numpy_Analyzer/
+│
+├── Numpy_Analyzer.ipynb   # Main notebook containing the DataAnalytics class & CLI
 └── README.md              # Project documentation
 ```
-
----
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8+
-- NumPy
-- Jupyter Notebook / JupyterLab (or run as a `.py` script)
+
+Make sure you have Python 3 and NumPy installed:
+
+```bash
+pip install numpy
+```
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/rudhiyansh/Numpy-Analyzer.git
-cd Numpy-Analyzer
+1. Clone the repository:
 
-# Install dependencies
-pip install numpy notebook
+```bash
+git clone https://github.com/rudhiyansh/Numpy_Analyzer.git
+cd Numpy_Analyzer
 ```
 
-### Usage
+2. Launch the notebook:
 
-**Option 1 — Run in Jupyter Notebook**
 ```bash
 jupyter notebook Numpy_Analyzer.ipynb
 ```
-Run the cell and follow the on-screen menu prompts.
 
-**Option 2 — Run as a Python script**
+Or convert it to a script and run it directly from the terminal:
+
 ```bash
 jupyter nbconvert --to script Numpy_Analyzer.ipynb
 python Numpy_Analyzer.py
 ```
 
-### Example Session
+## ▶️ Usage
+
+Once running, you'll be greeted with the main menu:
 
 ```
 Welcome to the NumPy analyst!
@@ -104,49 +105,47 @@ Choose an option:
 4. Search, Sort, or Filter Arrays
 5. Compute Aggregates and Statistics
 6. Exit
-Enter your choice: 1
+```
+
+**Example — creating a 2D array:**
+
+```
+Enter your choice : 1
 1. Create a new array
 2. Indexing and Slicing
-Enter your choice: 1
+Enter your choice : 1
 
 Select the type of array to create:
 1. 1D Array
 2. 2D Array
 3. 3D Array
-Enter your choice: 2
-Enter the number of rows: 2
-Enter the number of columns: 3
-Enter 6 elements for the array separated by space: 20 30 40 50 60 70
+Enter your choice : 2
+Enter the number of rows : 2
+Enter the number of columns : 2
+Enter 4 elements for the array separated by space : 1 2 3 4
 
 Array created successfully:
-[[20 30 40]
- [50 60 70]]
+[[1 2]
+ [3 4]]
 ```
 
----
+Simply follow the on-screen prompts to navigate between creating arrays, running math operations, filtering, sorting, and computing statistics.
 
-## 🎥 Video Walkthrough
+## 🎯 Learning Highlights
 
-I recorded a full screen-recording documentary-style video while building this project, walking through the thought process and code line by line.
+This project is a great reference for:
+- Using `@property` and setters to protect internal state
+- The difference between `@staticmethod` and `@classmethod`
+- Name mangling with double-underscore private attributes (`__array`)
+- Practical NumPy operations: `reshape`, `np.dot`, `@` (matmul), `np.where`, `np.sort`, `np.array_split`, boolean masking
 
-<p align="center">
-  <a href="PASTE_YOUR_VIDEO_LINK_HERE">
-    <img src="https://img.shields.io/badge/▶️_Open_My_Video-Watch_Now-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the video walkthrough">
-  </a>
-</p>
+## 🤝 Contributing
 
-> Replace `PASTE_YOUR_VIDEO_LINK_HERE` above with your actual video URL (YouTube, Google Drive, etc.) so the button links correctly.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/rudhiyansh/Numpy_Analyzer/issues) or open a pull request.
 
----
+## 📄 License
 
-## 🔮 Future Improvements
-
-- [ ] Add unit tests for each operation
-- [ ] Support loading array data from CSV files
-- [ ] Add a simple GUI (Tkinter / Streamlit) version
-- [ ] Export results to file
-
----
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
@@ -155,10 +154,4 @@ GitHub: [@rudhiyansh](https://github.com/rudhiyansh)
 
 ---
 
-## 📜 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<p align="center">If you found this project useful, consider giving it a ⭐!</p>
+⭐ If you found this project useful, consider giving it a star on GitHub!
