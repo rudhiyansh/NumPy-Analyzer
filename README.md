@@ -32,34 +32,6 @@ NumPy Analyzer is a single-class (`DataAnalytics`) command-line toolkit built ar
 
 ---
 
-## ✅ Requirement Coverage
-
-| Requirement (from project brief) | Status | Notes |
-|---|---|---|
-| `DataAnalytics` class encapsulating all functionality | ✅ | Single class wraps every operation |
-| Array creation (1D/2D/3D) | ✅ | `create_array()` |
-| Indexing & slicing | ✅ | `sli()` |
-| Combining arrays | ✅ | `com_slp()` — concatenate/vstack |
-| Splitting arrays | ✅ | `com_slp()` — `np.array_split` |
-| Element-wise +, −, ×, ÷ | ✅ | `math()` |
-| Dot product / matrix multiplication (2D) | ✅ | `math()` — options 5 & 6, verified working |
-| Search for a value | ✅ | `sea_sort()` — `np.where` |
-| Sort ascending/descending | ⚠️ Partial | Only ascending sort (`np.sort`) is available; still no descending option |
-| Filter by condition | ✅ | `sea_sort()` — greater/less/equal/between |
-| Sum, mean, median, std dev, variance | ✅ | `ag_stat()` |
-| Min/max values | ❌ Missing | Still not in `ag_stat()`'s menu |
-| Percentiles | ❌ Missing | Still not implemented |
-| Correlation coefficients between arrays | ❌ Missing | Still not implemented |
-| Constructors for initializing arrays | ✅ | `__init__` + `array` setter |
-| Encapsulation, private internal methods | ✅ | `__array`, `__check()` |
-| `@classmethod` for additional utility | ✅ | `create_from_range()` |
-| `@staticmethod` for additional utility | ⚠️ Partial | `display()` is defined but still never called in `main()` |
-| Menu-driven UI with exit | ✅ | `main()` loop |
-
-**Improved from the previous version** — dot product and matrix multiplication are now implemented and tested working. Still outstanding: descending sort, min/max, percentiles, and correlation coefficients.
-
----
-
 ## 🐞 A Few Things Worth Knowing
 
 Not blockers, just flagging in case you want to tidy them up:
